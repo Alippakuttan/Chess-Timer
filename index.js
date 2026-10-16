@@ -11,8 +11,8 @@ var turn = "white";
 let whiteTimer = null;
 let blackTimer = null;
 
-var whiteTime = 10;
-var blackTime = 10;
+var whiteTime = 600;
+var blackTime = 600;
 
 playBtn.addEventListener("click", () => {
   if (gameStart === false) {
