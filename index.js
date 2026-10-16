@@ -31,6 +31,7 @@ function startGame() {
   gameOn = true;
   gameStart = true;
   playBtn.innerHTML = "pause";
+  bigSmall();
 }
 
 function pauseGame() {
@@ -41,6 +42,7 @@ function pauseGame() {
   }
   gameOn = false;
   playBtn.innerHTML = "resume";
+  sameSize();
 }
 
 function resumeGame() {
@@ -51,6 +53,7 @@ function resumeGame() {
   }
   playBtn.innerHTML = "pause";
   gameOn = true;
+  bigSmall();
 }
 
 white.addEventListener("click", () => {
@@ -59,6 +62,7 @@ white.addEventListener("click", () => {
       clearInterval(whiteTimer);
       blackTimer = setInterval(blackCountdown, 1000);
       turn = "black";
+      bigSmall();
     }
   }
 });
@@ -69,6 +73,7 @@ black.addEventListener("click", () => {
       clearInterval(blackTimer);
       whiteTimer = setInterval(whiteCountdown, 1000);
       turn = "white";
+      bigSmall();
     }
   }
 });
@@ -107,4 +112,25 @@ function endGame() {
   } else {
     document.querySelector(".white-win").style.display = "flex";
   }
+}
+
+function bigSmall() {
+  if (turn === "white") {
+    white.classList.add("big");
+    black.classList.add("small");
+    white.classList.remove("small");
+    black.classList.remove("big");
+  } else {
+    black.classList.add("big");
+    white.classList.add("small");
+    black.classList.remove("small");
+    white.classList.remove("big");
+  }
+}
+
+function sameSize() {
+  white.classList.remove("small");
+  white.classList.remove("big");
+  black.classList.remove("small");
+  black.classList.remove("big");
 }

@@ -29,26 +29,36 @@ main {
   font-family: "montserrat";
   font-weight: 700;
   letter-spacing: 3px;
+  transition: all 0.5s ease;
+  position: relative;
 }
 
 .white,
 .white-win {
   background-color: var(--white);
-  transform: rotate(180deg);
   color: var(--black);
+}
+
+.big {
+  height: 70vh;
+  font-size: 4rem;
+}
+
+.small {
+  height: 30vh;
+  font-size: 2rem;
 }
 
 .black,
 .black-win {
+  transform: rotate(180deg);
   background-color: var(--black);
   color: var(--white);
 }
 
 .play {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: -25px;
   background-color: #3aa667;
   padding: 10px 20px;
   font-size: 1.15rem;
