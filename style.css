@@ -58,7 +58,9 @@ main {
 
 .play {
   position: absolute;
-  top: -25px;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #3aa667;
   padding: 10px 20px;
   font-size: 1.15rem;
@@ -67,6 +69,8 @@ main {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 2px;
+  transition: all 0.5s ease;
+  z-index: 3;
 }
 
 .white-win,

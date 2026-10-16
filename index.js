@@ -120,11 +120,13 @@ function bigSmall() {
     black.classList.add("small");
     white.classList.remove("small");
     black.classList.remove("big");
+    playBtn.style.top = "30vh";
   } else {
     black.classList.add("big");
     white.classList.add("small");
     black.classList.remove("small");
     white.classList.remove("big");
+    playBtn.style.top = "70vh";
   }
 }
 
@@ -133,4 +135,5 @@ function sameSize() {
   white.classList.remove("big");
   black.classList.remove("small");
   black.classList.remove("big");
+  playBtn.style.top = "50vh";
 }
