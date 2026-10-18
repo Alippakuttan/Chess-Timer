@@ -1,4 +1,6 @@
 const playBtn = document.querySelector(".play");
+const menuBtn = document.querySelector(".menu-btn");
+const timeWrapper = document.querySelector(".time-option-wrapper");
 const white = document.querySelector(".white");
 const black = document.querySelector(".black");
 const whiteText = document.querySelector(".white p");
@@ -13,6 +15,24 @@ let blackTimer = null;
 
 var whiteTime = 600;
 var blackTime = 600;
+var addTime = 0;
+
+menuBtn.addEventListener("click", () => {
+  timeWrapper.classList.toggle("time-option-wrapper-visible");
+});
+
+document.querySelectorAll(".time-option").forEach((op) => {
+  op.addEventListener("click", (e) => {
+    var time = e.target.getAttribute("time");
+    var add = e.target.getAttribute("add");
+    whiteTime = Number(time) * 60;
+    blackTime = Number(time) * 60;
+    addTime = Number(add);
+    whiteText.innerHTML = `${time}:00`;
+    blackText.innerHTML = `${time}:00`;
+    timeWrapper.classList.toggle("time-option-wrapper-visible");
+  });
+});
 
 playBtn.addEventListener("click", () => {
   if (gameStart === false) {
@@ -31,6 +51,7 @@ function startGame() {
   gameOn = true;
   gameStart = true;
   playBtn.innerHTML = "pause";
+  menuBtn.style.left = "-50px";
   bigSmall();
 }
 
@@ -60,6 +81,13 @@ white.addEventListener("click", () => {
   if (gameOn === true) {
     if (turn === "white") {
       clearInterval(whiteTimer);
+      whiteTime = whiteTime + addTime;
+      var sec = whiteTime % 60;
+      var min = (whiteTime - sec) / 60;
+      if (sec < 10) {
+        sec = `0${sec}`;
+      }
+      whiteText.innerHTML = `${min}:${sec}`;
       blackTimer = setInterval(blackCountdown, 1000);
       turn = "black";
       bigSmall();
@@ -71,6 +99,13 @@ black.addEventListener("click", () => {
   if (gameOn === true) {
     if (turn === "black") {
       clearInterval(blackTimer);
+      blackTime = blackTime + addTime;
+      var sec = blackTime % 60;
+      var min = (blackTime - sec) / 60;
+      if (sec < 10) {
+        sec = `0${sec}`;
+      }
+      blackText.innerHTML = `${min}:${sec}`;
       whiteTimer = setInterval(whiteCountdown, 1000);
       turn = "white";
       bigSmall();

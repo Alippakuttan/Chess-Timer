@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
@@ -14,11 +21,21 @@
     <main>
       <div class="black"><p>10:00</p></div>
       <div class="play">Start</div>
+      <div class="menu-btn"><i class="fa-solid fa-hourglass"></i></div>
       <div class="white">
         <p>10:00</p>
       </div>
       <div class="white-win"><p>White Won!</p></div>
       <div class="black-win"><p>Black Won!</p></div>
+
+      <ul class="time-option-wrapper">
+        <li class="time-option" time="3" add="0">3 min</li>
+        <li class="time-option" time="5" add="0">5 min</li>
+        <li class="time-option" time="10" add="0">10 min</li>
+        <li class="time-option" time="10" add="5">10 + 5 min</li>
+        <li class="time-option" time="15" add="0">15 min</li>
+        <li class="time-option" time="15" add="10">15 + 10 min</li>
+      </ul>
     </main>
     <script src="index.js"></script>
   </body>
