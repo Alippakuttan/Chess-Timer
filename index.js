@@ -52,6 +52,7 @@ function startGame() {
   gameStart = true;
   playBtn.innerHTML = "pause";
   menuBtn.style.left = "-50px";
+  playBtn.style.left = "50%";
   bigSmall();
 }
 
